@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  server-pk:
+    build: .
+    container_name: server
+    working_dir: /app
+    # command: npm start
+    volumes:
+      - .:/app
+      - app/node_modules
+    ports:
+        - "5001:5001"
+        - "3001:3001"
+    environment:
+      - TZ=Asia/Bangkok
